@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/contacts">
             <h1 className="">
-              agregar nuevo contacto
+              vista para formulario agregar contactos 
             </h1>
             <input type="text"
               className=
@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/">
             <h1>Lista de contactos</h1>
           </Route>
-          <Route render={() => <h1>Not found</h1>} />
+          {/* <Route render={() => <h1>Not found</h1>} /> */}
         </Switch>
 
       </BrowserRouter>
