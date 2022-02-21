@@ -1,6 +1,20 @@
+import { useState } from "react"
 
+
+const contacto = {
+  full_name: "",
+  email: "",
+  agenda_slug: "jarrod",
+  address: "",
+  phone: ""
+
+}
 
 export function FormAddNewContact() {
+
+  const [contacto, setContacto] = useState({})
+
+
   return (
     <>
       <div className="header flex justify-center">
@@ -13,6 +27,7 @@ export function FormAddNewContact() {
       <form action="" className="flex flex-col">
         <label htmlFor="">Nombre</label>
         <input type="text"
+          // value={ }
           className=
           "rounded-md block border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mb-4" placeholder="ingrese su nombre" />
 
