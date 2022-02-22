@@ -1,5 +1,4 @@
 import { useContext, } from "react";
-import { Link } from "react-router-dom";
 import { Contact } from "../components/Contact";
 import { LinkButton } from "../components/LinkButton";
 import { ContactContext } from "../context/ContactProvider";
@@ -8,13 +7,9 @@ import { ContactContext } from "../context/ContactProvider";
 
 export function Home() {
 
-
   const [contacts] = useContext(ContactContext);
 
-
-
   return (
-
     <div className="container   flex flex-col max-w-3xl  mx-auto py-16">
       <LinkButton text="Add New Contact" path="/addNew" />
       <div>

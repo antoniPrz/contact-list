@@ -12,9 +12,7 @@ export function FormEditContact() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-  }
+
 
   const { id } = useParams();
   return (
@@ -26,7 +24,7 @@ export function FormEditContact() {
 
       </div>
 
-      <form onSubmit={onSubmit} className="flex flex-col" >
+      <form onSubmit={e => (e.preventDefault())} className="flex flex-col" >
         <label htmlFor="">Nombre</label>
         <input type="text"
           className=

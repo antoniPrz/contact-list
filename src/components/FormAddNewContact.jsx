@@ -2,31 +2,14 @@ import { useContext, useState } from "react"
 import { ContactContext } from "../context/ContactProvider"
 
 
-const contacto = {
-  full_name: "",
-  email: "",
-  agenda_slug: "jarrod",
-  address: "",
-  phone: ""
-
-}
-
 export function FormAddNewContact() {
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-  }
 
   const [contacts, eliminarContacto, agregarContacto] = useContext(ContactContext)
 
-  // const agregarContacto = () => {
-  //   console.log('agregando contacto')
-  // }
-
-  const [name, setName] = useState({})
-  const [phone, setPhone] = useState({})
-  const [address, setAddress] = useState({})
-  const [email, setEmail] = useState({})
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
 
 
 
@@ -39,7 +22,7 @@ export function FormAddNewContact() {
 
       </div>
 
-      <form action="" onSubmit={onSubmit} className="flex flex-col">
+      <form action="" onSubmit={e => (e.preventDefault())} className="flex flex-col">
         <label htmlFor="">Nombre</label>
         <input type="text"
           className=

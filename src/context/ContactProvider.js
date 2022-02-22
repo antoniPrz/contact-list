@@ -1,12 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 
-
-
 export const ContactContext = createContext()
 
 export function ContactProvider(props) {
 
-  const [contact, setContact] = useState("");
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -74,10 +71,6 @@ export function ContactProvider(props) {
 
 
   }
-
-
-
-
 
   return (
     <ContactContext.Provider value={[contacts, eliminarContacto, agregarContacto, toEditContact]}>

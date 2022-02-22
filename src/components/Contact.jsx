@@ -1,5 +1,4 @@
 import { useContext } from "react"
-import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { ContactContext } from "../context/ContactProvider"
 
@@ -8,8 +7,6 @@ import { ContactContext } from "../context/ContactProvider"
 export function Contact({ nombre, correo, telefono, direccion, id }) {
 
   const [contacts, eliminarContacto] = useContext(ContactContext)
-
-
 
 
   return (
