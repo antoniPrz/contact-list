@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/AddNew">
               <AddNewContact />
             </Route>
-            <Route exact path="/edit">
+            <Route exact path="/edit/:id">
               <EditContact />
             </Route>
             <Route exact path="/">

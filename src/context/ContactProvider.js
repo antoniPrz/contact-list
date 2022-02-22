@@ -32,15 +32,45 @@ export function ContactProvider(props) {
   }
 
 
-  const toSetNewContact = () => {
-    console.log("Agregamdo nuevo contacto");
+  function agregarContacto(full_name, phone, email, address) {
 
+
+    fetch("https://assets.breatheco.de/apis/fake/contact/", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        full_name: full_name,
+        email: email,
+        agenda_slug: "jarrod",
+        address: address,
+        phone: phone
+      })
+    }).then(() => { toGetContacts() })
+      .catch(error => console.log(error));
+
+
+    console.log("agregando desde context")
   }
 
 
 
 
-  const toEditContact = () => {
+  const toEditContact = (full_name, phone, email, address, id) => {
+    fetch("https://assets.breatheco.de/apis/fake/contact/" + id, {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        id: id,
+        full_name: full_name,
+        email: email,
+        agenda_slug: "jarrod",
+        address: address,
+        phone: phone
+      })
+    }).then(() => { toGetContacts() })
+      .catch(error => console.log(error));
+
+    console.log("editado desde context")
 
 
   }
@@ -50,7 +80,7 @@ export function ContactProvider(props) {
 
 
   return (
-    <ContactContext.Provider value={[contacts, eliminarContacto, toSetNewContact]}>
+    <ContactContext.Provider value={[contacts, eliminarContacto, agregarContacto, toEditContact]}>
       {props.children}
     </ContactContext.Provider>
 
