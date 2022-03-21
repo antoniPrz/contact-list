@@ -12,25 +12,25 @@ export function FormEditContact() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-
-
   const { id } = useParams();
+
   return (
     <>
       <div className="header flex justify-center">
         <h1 className="pb-4">
           Editar contacto
         </h1>
-
       </div>
 
       <form onSubmit={e => (e.preventDefault())} className="flex flex-col" >
         <label htmlFor="">Nombre</label>
         <input type="text"
           className=
+          //todo turn this code in a class 
           "rounded-md block border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mb-4"
           placeholder="ingrese su nombre"
           onChange={e => setName(e.target.value)}
+          value={name}
         />
 
 

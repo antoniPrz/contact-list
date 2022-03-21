@@ -1,12 +1,9 @@
 
-import { useEffect } from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import { BrowserRouter } from 'react-router-dom';
 import { AddNewContact } from "./views/AddNewContact";
 import { EditContact } from "./views/EditContact";
 import { Home } from "./views/Home";
@@ -17,11 +14,6 @@ import { ContactProvider } from './context/ContactProvider'
 
 
 function App() {
-
-
-
-
-
 
   return (
     <>
